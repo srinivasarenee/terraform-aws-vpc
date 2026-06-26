@@ -27,7 +27,7 @@ variable "public_subnet_cidrs" {
 }
 variable "public_subnet_tags" {
 
-  type = map(string)
+  type = map(any)
   default = {
 
   }
