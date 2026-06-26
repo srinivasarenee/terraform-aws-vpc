@@ -12,4 +12,10 @@ variable "environment" {
 variable "vpc_tags" {
 
   type = map(string)
+
+}
+variable "igw_tags" {
+
+  type = map(string)
+
 }
