@@ -60,3 +60,32 @@ variable "database_subnet_tags" {
   }
 
 }
+
+variable "public_route_table_tags" {
+
+  type = map(any)
+  default = {
+
+  }
+
+}
+variable "private_route_table_tags" {
+
+  type = map(any)
+  default = {
+
+  }
+
+}
+variable "database_route_table_tags" {
+
+  type = map(any)
+  default = {
+
+  }
+
+}
+variable "public_cidr" {
+  type    = string
+  default = "0.0.0.0/0"
+}
