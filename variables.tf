@@ -98,3 +98,11 @@ variable "aws_eip_tags" {
   }
 
 }
+variable "aws_nat_gateway_tags" {
+
+  type = map(any)
+  default = {
+
+  }
+
+}
