@@ -152,7 +152,7 @@ resource "aws_route" "private" {
 }
 
 resource "aws_route" "database" {
-  route_table_id = aws_route_table.public.id
+  route_table_id = aws_route_table.database.id
   #gateway_id             = aws_internet_gateway.main.id
   nat_gateway_id         = aws_nat_gateway.main.id
   destination_cidr_block = var.public_cidr
