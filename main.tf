@@ -101,7 +101,7 @@ resource "aws_route_table_association" "public" {
   route_table_id = aws_route_table.public.id
 }
 
-resource "aws_route_table_association" "private" {
+/* resource "aws_route_table_association" "private" {
   count          = length(var.private_subnet_cidrs)
   subnet_id      = aws_subnet.private[count.index].id
   route_table_id = aws_route_table.public.id
@@ -118,4 +118,4 @@ resource "aws_route" "public" {
   gateway_id             = aws_internet_gateway.main.id
   destination_cidr_block = var.public_cidr
 
-}
+} */
