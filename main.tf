@@ -117,6 +117,19 @@ resource "aws_route_table_association" "database" {
   subnet_id      = aws_subnet.database[count.index].id
   route_table_id = aws_route_table.database.id
 }
+resource "aws_eip" "nat" {
+  domain = "vpc"
+  tags = merge(
+    local.common_tags,
+    {
+      Name = "${var.project}-${var.environment}-nat"
+    },
+    var.aws_eip_tags
+
+  )
+}
+
+
 
 /* 
 
