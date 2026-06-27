@@ -143,6 +143,21 @@ resource "aws_nat_gateway" "main" {
   depends_on = [aws_internet_gateway.main]
 }
 
+resource "aws_route" "private" {
+  route_table_id = aws_route_table.private.id
+  # gateway_id             = aws_internet_gateway.main.id
+  nat_gateway_id         = aws_nat_gateway.main.id
+  destination_cidr_block = var.public_cidr
+
+}
+
+resource "aws_route" "database" {
+  route_table_id = aws_route_table.public.id
+  #gateway_id             = aws_internet_gateway.main.id
+  nat_gateway_id         = aws_nat_gateway.main.id
+  destination_cidr_block = var.public_cidr
+
+}
 
 /* 
 
